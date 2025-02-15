@@ -1,3 +1,106 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  :root {
+    /* New palette mapping:
+       A = yinmn-blue:   hsl(208, 53%, 32%)
+       B = dun:          hsl(43, 37%, 77%)
+       C = dark-purple:  hsl(290, 89%, 7%)
+       D = powder-blue:  hsl(217, 60%, 80%)
+       E = periwinkle:   hsl(258, 100%, 92%)
+    */
+
+    /* Overall backgrounds & text */
+    --background: 208, 53%, 32%;        /* A */
+    --foreground: 43, 37%, 77%;          /* B */
+
+    --periwinkle: 258, 100%, 92%;        /* E */
+    --periwinkle-dark: 258, 100%, 70%;
+
+    /* Section backgrounds */
+    --lightsection: 217, 60%, 80%;        /* D */
+
+    /* Cards & popovers */
+    --card: 290, 89%, 7%;               /* C */
+    --card-foreground: 43, 37%, 77%;      /* B */
+
+    /* For simplicity I’ve set popovers equal to cards here */
+    --popover: 290, 89%, 7%;            /* C */
+    --popover-foreground: 43, 37%, 77%;   /* B */
+
+    /* Interactive element colours
+       (Feel free to reassign these if you’d like a different “accent” emphasis.) */
+    --primary: 208, 53%, 32%;            /* A */
+    --primary-foreground: 0, 0%, 100%;     /* White */
+
+    --secondary: 290, 89%, 7%;           /* C */
+    --secondary-foreground: 0, 0%, 100%;   /* White */
+
+    --accent: 217, 60%, 80%;             /* D */
+    --accent-foreground: 208, 53%, 32%;    /* A (for contrast on D) */
+
+    --destructive: 290, 89%, 7%;         /* C */
+    --destructive-foreground: 0, 0%, 100%; /* White */
+
+    /* Neutrals & Rings */
+    --border: 290, 89%, 7%;              /* C */
+    --input: 290, 89%, 7%;               /* C */
+    --ring: 217, 60%, 80%;               /* D */
+
+    /* Chart colours – one per palette colour */
+    --chart-1: 208, 53%, 32%;            /* A */
+    --chart-2: 43, 37%, 77%;             /* B */
+    --chart-3: 290, 89%, 7%;             /* C */
+    --chart-4: 217, 60%, 80%;            /* D */
+    --chart-5: 258, 100%, 92%;           /* E */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Swap background & card: */
+    --background: 290, 89%, 7%;         /* C now becomes the overall background */
+    --foreground: 258, 100%, 92%;        /* E for main text in dark mode */
+
+    --card: 208, 53%, 32%;              /* A now serves as the card background */
+    --card-foreground: 43, 37%, 77%;      /* B remains as card text */
+
+    /* Popovers follow the card pattern */
+    --popover: 208, 53%, 32%;           /* A */
+    --popover-foreground: 43, 37%, 77%;   /* B */
+
+    /* Interactive elements (unchanged) */
+    --primary: 208, 53%, 32%;            /* A */
+    --primary-foreground: 0, 0%, 100%;     /* White */
+
+    --secondary: 290, 89%, 7%;           /* C */
+    --secondary-foreground: 0, 0%, 100%;   /* White */
+
+    --accent: 217, 60%, 80%;             /* D */
+    --accent-foreground: 208, 53%, 32%;    /* A */
+
+    --destructive: 290, 89%, 7%;         /* C */
+    --destructive-foreground: 0, 0%, 100%; /* White */
+
+    --border: 290, 89%, 7%;              /* C */
+    --input: 290, 89%, 7%;               /* C */
+    --ring: 217, 60%, 80%;               /* D */
+
+    /* Chart colours (same mapping as light mode) */
+    --chart-1: 208, 53%, 32%;            /* A */
+    --chart-2: 43, 37%, 77%;             /* B */
+    --chart-3: 290, 89%, 7%;             /* C */
+    --chart-4: 217, 60%, 80%;            /* D */
+    --chart-5: 258, 100%, 92%;           /* E */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
