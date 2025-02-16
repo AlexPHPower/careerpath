@@ -3,6 +3,7 @@ import Link from "next/link";
 import { auth } from "@/server/auth";
 import { api, HydrateClient } from "@/trpc/server";
 import BentoBoxFeatures from "@/components/bentoBoxFeatures";
+import BentoBoxArticles from "@/components/bentoBoxArticles";
 import JobSearch from "@/components/jobSearch";
 
 export default async function Home() {
@@ -25,6 +26,9 @@ export default async function Home() {
           <div className="flex w-fit flex-col items-start justify-center gap-12">
             <h1 className="text-4xl font-bold text-background">Features</h1>
             <BentoBoxFeatures />
+          </div>
+          <div className="flex w-fit flex-col items-start justify-center gap-12">
+            <BentoBoxArticles />
           </div>
         </div>
       </main>
