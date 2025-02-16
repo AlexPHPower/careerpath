@@ -1,23 +1,30 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Search, MapPin } from "lucide-react";
 
 export default function JobSearch() {
   return (
     <>
       <div className="flex w-full items-center space-x-4">
-        <Input
-          className="md:text-md h-12 rounded-full border-none bg-gradient-to-r from-periwinkle to-periwinkledark font-medium text-card"
-          type="email"
-          placeholder="Job Title, Skill or Company"
-        />
-        <Input
-          className="md:text-md h-12 rounded-full border-none bg-gradient-to-r from-periwinkle to-periwinkledark font-medium text-card"
-          type="text"
-          placeholder="Post Code"
-        />
+        <div className="relative w-full">
+          <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-card" />
+          <Input
+            className="md:text-md h-12 w-full rounded-full border-none bg-gradient-to-r from-periwinkle to-periwinkledark pl-12 pr-4 font-medium text-card placeholder-card focus:from-periwinkledark focus:to-periwinkle"
+            type="email"
+            placeholder="Job Title, Skill or Company"
+          />
+        </div>
+        <div className="relative w-full">
+          <MapPin className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-card" />
+          <Input
+            className="md:text-md h-12 w-full rounded-full border-none bg-gradient-to-r from-periwinkle to-periwinkledark pl-12 pr-4 font-medium text-card placeholder-card focus:from-periwinkledark focus:to-periwinkle"
+            type="text"
+            placeholder="Post Code"
+          />
+        </div>
         <Button
-          className="text-md h-12 w-72 rounded-full bg-gradient-to-r from-periwinkle to-periwinkledark text-card"
+          className="text-md h-12 w-72 rounded-full bg-periwinkle text-card hover:bg-periwinkledark"
           type="submit"
         >
           Search
