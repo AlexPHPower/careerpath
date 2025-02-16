@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { auth } from "@/server/auth";
 import { api, HydrateClient } from "@/trpc/server";
-import BentoBox from "@/components/bentobox";
+import BentoBoxFeatures from "@/components/bentoBoxFeatures";
 import JobSearch from "@/components/jobSearch";
 
 export default async function Home() {
@@ -15,25 +15,16 @@ export default async function Home() {
 
   return (
     <HydrateClient>
-      <main className="from-background to-card flex min-h-screen flex-col items-center justify-center bg-gradient-to-r">
-        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
-          <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">
-            Create <span className="text-periwinkle">T3</span> App
-          </h1>
-          <div className="flex w-full flex-col items-center justify-center gap-12">
+      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-background to-card">
+        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-14">
+          <div className="flex h-64 w-full flex-col items-center justify-center gap-12">
             <JobSearch />
           </div>
         </div>
-        <div className="bg-lightsection card-foreground flex w-full flex-col items-center justify-center gap-12 px-4 py-16">
-          <div className="flex w-4/5 flex-col items-center justify-center gap-12">
-            <h1 className="text-background text-4xl font-bold">CareerPath</h1>
-            <p className="text-destructive text-lg">
-              CareerPath is a platform that is designed to help you find the
-              best job opportunities. We see the value in candidates over the
-              value of job postings. We want to make sure that you get the best
-              job opportunities.
-            </p>
-            <BentoBox />
+        <div className="card-foreground flex w-full flex-col items-center justify-center gap-12 bg-lightsection px-4 py-16">
+          <div className="flex w-fit flex-col items-start justify-center gap-12">
+            <h1 className="text-4xl font-bold text-background">Features</h1>
+            <BentoBoxFeatures />
           </div>
         </div>
       </main>

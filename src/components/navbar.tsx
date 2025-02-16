@@ -8,9 +8,9 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="from-background to-card sticky top-0 z-50 bg-gradient-to-r">
+    <nav className="top-0 z-50 bg-gradient-to-r from-background to-card">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo / Brand Name */}
           <div className="flex items-center">
             <Link
@@ -18,13 +18,11 @@ const Navbar: React.FC = () => {
               className="flex items-center text-xl font-bold"
             >
               <Image
-                src="/logo.png"
-                alt="logo"
-                height={50}
-                width={50}
-                className="mr-2"
+                src="/logo-with-text.png"
+                alt="logo-with-text"
+                height={300}
+                width={250}
               />
-              CareerPath
             </Link>
           </div>
           {/* Desktop Menu */}
@@ -32,7 +30,7 @@ const Navbar: React.FC = () => {
             <div className="ml-10 flex items-baseline space-x-4">
               <Link
                 className={
-                  "hover:text-foreground/75 rounded-md px-3 py-2 text-sm font-medium"
+                  "rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
                 }
                 href="/public"
               >
@@ -40,7 +38,7 @@ const Navbar: React.FC = () => {
               </Link>
               <Link
                 className={
-                  "hover:text-foreground/75 rounded-md px-3 py-2 text-sm font-medium"
+                  "rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
                 }
                 href="/about"
               >
@@ -48,7 +46,7 @@ const Navbar: React.FC = () => {
               </Link>
               <Link
                 className={
-                  "hover:text-foreground/75 rounded-md px-3 py-2 text-sm font-medium"
+                  "rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
                 }
                 href="/services"
               >
@@ -56,7 +54,7 @@ const Navbar: React.FC = () => {
               </Link>
               <Link
                 className={
-                  "hover:text-foreground/75 rounded-md px-3 py-2 text-sm font-medium"
+                  "rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
                 }
                 href="/contact"
               >
