@@ -3,14 +3,15 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Briefcase, FileUp, Heart, UserSearch } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="from-background to-card sticky top-0 z-50 bg-gradient-to-r">
+    <nav className="top-0 z-50 bg-gradient-to-r from-background to-card">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Logo / Brand Name */}
           <div className="flex items-center">
             <Link
@@ -18,50 +19,55 @@ const Navbar: React.FC = () => {
               className="flex items-center text-xl font-bold"
             >
               <Image
-                src="/logo.png"
-                alt="logo"
-                height={50}
-                width={50}
-                className="mr-2"
+                src="/logo-with-text.png"
+                alt="logo-with-text"
+                height={300}
+                width={250}
               />
-              CareerPath
             </Link>
           </div>
           {/* Desktop Menu */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              <Link
-                className={
-                  "hover:text-foreground/75 rounded-md px-3 py-2 text-sm font-medium"
-                }
-                href="/public"
-              >
-                Home
-              </Link>
-              <Link
-                className={
-                  "hover:text-foreground/75 rounded-md px-3 py-2 text-sm font-medium"
-                }
-                href="/about"
-              >
-                About
-              </Link>
-              <Link
-                className={
-                  "hover:text-foreground/75 rounded-md px-3 py-2 text-sm font-medium"
-                }
-                href="/services"
-              >
-                Services
-              </Link>
-              <Link
-                className={
-                  "hover:text-foreground/75 rounded-md px-3 py-2 text-sm font-medium"
-                }
-                href="/contact"
-              >
-                Contact
-              </Link>
+            <div className="ml-10 space-x-4">
+              <div className="flex items-center">
+                <Link
+                  className={
+                    "flex gap-2 rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
+                  }
+                  href="/login-apply"
+                >
+                  <Briefcase className="h-5 w-5" />
+                  Apply
+                </Link>
+                |
+                <Link
+                  className={
+                    "flex gap-2 rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
+                  }
+                  href="/login-recruit"
+                >
+                  <UserSearch className="h-5 w-5" />
+                  Recruit
+                </Link>
+                <Link
+                  className={
+                    "flex gap-2 rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
+                  }
+                  href="/about"
+                >
+                  <Heart className="h-5 w-5" />
+                  Saved Jobs
+                </Link>
+                <Link
+                  className={
+                    "flex gap-2 rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
+                  }
+                  href="/services"
+                >
+                  <FileUp className="h-5 w-5" />
+                  Upload CV
+                </Link>
+              </div>
             </div>
           </div>
           {/* Mobile menu button */}
