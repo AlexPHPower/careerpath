@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Briefcase, FileUp, Heart, UserSearch } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,39 +28,46 @@ const Navbar: React.FC = () => {
           </div>
           {/* Desktop Menu */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              <Link
-                className={
-                  "rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
-                }
-                href="/public"
-              >
-                Home
-              </Link>
-              <Link
-                className={
-                  "rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
-                }
-                href="/about"
-              >
-                About
-              </Link>
-              <Link
-                className={
-                  "rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
-                }
-                href="/services"
-              >
-                Services
-              </Link>
-              <Link
-                className={
-                  "rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
-                }
-                href="/contact"
-              >
-                Contact
-              </Link>
+            <div className="ml-10 space-x-4">
+              <div className="flex items-center">
+                <Link
+                  className={
+                    "flex gap-2 rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
+                  }
+                  href="/login-apply"
+                >
+                  <Briefcase className="h-5 w-5" />
+                  Apply
+                </Link>
+                |
+                <Link
+                  className={
+                    "flex gap-2 rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
+                  }
+                  href="/login-recruit"
+                >
+                  <UserSearch className="h-5 w-5" />
+                  Recruit
+                </Link>
+                <Link
+                  className={
+                    "flex gap-2 rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
+                  }
+                  href="/about"
+                >
+                  <Heart className="h-5 w-5" />
+                  Saved Jobs
+                </Link>
+                <Link
+                  className={
+                    "flex gap-2 rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
+                  }
+                  href="/services"
+                >
+                  <FileUp className="h-5 w-5" />
+                  Upload CV
+                </Link>
+              </div>
             </div>
           </div>
           {/* Mobile menu button */}
