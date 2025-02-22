@@ -20,6 +20,7 @@ function BentoItemImage({
           src={imageSrc ?? "/placeholder.svg"}
           alt={imageAlt ?? "placeholder"}
           fill
+          sizes="(max-width: 768px) 100vw, 640px"
           className="object-cover"
         />
       </div>
