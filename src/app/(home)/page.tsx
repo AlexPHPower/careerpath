@@ -16,7 +16,7 @@ export default async function Home() {
     <HydrateClient>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-r from-background to-card">
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-14">
-          <div className="flex h-64 w-full flex-col items-center justify-center gap-12">
+          <div className="flex min-h-80 w-full flex-col items-center justify-center">
             <HeroSection />
           </div>
         </div>
