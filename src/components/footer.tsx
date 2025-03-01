@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-background to-card py-8">
+    <footer className="from-homepagegradient1 to-homepagegradient2 bg-gradient-to-r py-8 text-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-between">
           <div className="mb-6 w-full md:mb-0 md:w-1/3">

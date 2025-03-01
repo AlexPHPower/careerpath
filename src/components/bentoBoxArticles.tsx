@@ -29,7 +29,7 @@ export default function BentoBoxFeatures() {
         <div className="mt-12 text-center">
           <Link
             href="/articles"
-            className="hover:bg-primary-hover rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground"
+            className="bg-homepagebackground rounded-md px-6 py-3 font-semibold text-white"
           >
             Explore All Articles
           </Link>

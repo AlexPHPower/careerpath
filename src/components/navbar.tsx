@@ -3,14 +3,16 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Briefcase, FileUp, Heart, UserSearch } from "lucide-react";
+import { Briefcase, Heart, UserSearch } from "lucide-react";
+import { useSession } from "next-auth/react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { data: session, status } = useSession();
 
   return (
-    <nav className="top-0 z-50 bg-gradient-to-r from-background to-card">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <nav className="from-homepagegradient1 to-homepagegradient2 top-0 z-50 bg-gradient-to-r">
+      <div className="text-homepageforeground mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo / Brand Name */}
           <div className="flex items-center">
@@ -32,7 +34,7 @@ const Navbar: React.FC = () => {
               <div className="flex items-center">
                 <Link
                   className={
-                    "flex gap-2 rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
+                    "hover:text-homepagecardforeground flex gap-2 rounded-md px-3 py-2 text-sm font-medium"
                   }
                   href="/login-apply"
                 >
@@ -42,7 +44,7 @@ const Navbar: React.FC = () => {
                 |
                 <Link
                   className={
-                    "flex gap-2 rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
+                    "hover:text-homepagecardforeground flex gap-2 rounded-md px-3 py-2 text-sm font-medium"
                   }
                   href="/login-recruit"
                 >
@@ -51,22 +53,24 @@ const Navbar: React.FC = () => {
                 </Link>
                 <Link
                   className={
-                    "flex gap-2 rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
+                    "hover:text-homepagecardforeground flex gap-2 rounded-md px-3 py-2 text-sm font-medium"
                   }
                   href="/about"
                 >
                   <Heart className="h-5 w-5" />
                   Saved Jobs
                 </Link>
-                <Link
-                  className={
-                    "flex gap-2 rounded-md px-3 py-2 text-sm font-medium hover:text-foreground/75"
-                  }
-                  href="/services"
-                >
-                  <FileUp className="h-5 w-5" />
-                  Upload CV
-                </Link>
+                {status === "authenticated" && (
+                  <Link
+                    className={
+                      "hover:text-homepagecardforeground flex gap-2 rounded-md px-3 py-2 text-sm font-medium"
+                    }
+                    href="/profile/builder"
+                  >
+                    <UserSearch className="h-5 w-5" />
+                    Dashboard
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -118,25 +122,25 @@ const Navbar: React.FC = () => {
         <div className="md:hidden" id="mobile-menu">
           <div className="space-y-1 px-2 pb-3 pt-2 text-center sm:px-3">
             <Link
-              className="block rounded-md px-3 py-2 text-base font-medium"
+              className="text-homepagecardforeground block rounded-md px-3 py-2 font-medium"
               href="/public"
             >
               Home
             </Link>
             <Link
-              className="block rounded-md px-3 py-2 text-base font-medium"
+              className="text-homepagecardforeground block rounded-md px-3 py-2 font-medium"
               href="/about"
             >
               About
             </Link>
             <Link
-              className="block rounded-md px-3 py-2 text-base font-medium"
+              className="text-homepagecardforeground block rounded-md px-3 py-2 font-medium"
               href="/services"
             >
               Services
             </Link>
             <Link
-              className="block rounded-md px-3 py-2 text-base font-medium"
+              className="text-homepagecardforeground block rounded-md px-3 py-2 font-medium"
               href="/contact"
             >
               Contact

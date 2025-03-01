@@ -46,7 +46,10 @@ export default function HeroSectionForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="text-homepagecardforeground space-y-4"
+      >
         <FormField
           control={form.control}
           name="stack"
@@ -64,7 +67,8 @@ export default function HeroSectionForm() {
                   variant="cardForeground"
                   animation={2}
                   maxCount={3}
-                  className="border-card-foreground focus-visible:ring-card-foreground"
+                  isAnimated={false}
+                  className="border-homepagecardforeground focus-visible:ring-homepagecardforeground"
                 />
               </FormControl>
               <FormMessage />
@@ -86,7 +90,10 @@ export default function HeroSectionForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="mt-2 w-full md:w-auto">
+        <Button
+          type="submit"
+          className="bg-homepagebackground mt-2 w-full md:w-auto"
+        >
           Create Profile
         </Button>
       </form>

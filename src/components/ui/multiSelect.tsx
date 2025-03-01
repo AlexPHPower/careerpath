@@ -45,7 +45,7 @@ const multiSelectVariants = cva(
           "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
         inverted: "inverted",
         cardForeground:
-          "border-foreground/10 text-card-foreground bg-transparent hover:bg-card/80",
+          "border-homepagecardforeground text-homepagecardforeground bg-transparent hover:bg-periwinkle/80",
       },
     },
     defaultVariants: {
@@ -235,7 +235,7 @@ export const MultiSelect = React.forwardRef<
                         {IconComponent && (
                           <SimpleIcon
                             path={IconComponent}
-                            color={option?.iconColor}
+                            color="#ffffff"
                             imageUrl={option?.imageUrl}
                             className="mr-2 h-4 w-4"
                           />
@@ -254,7 +254,7 @@ export const MultiSelect = React.forwardRef<
                   {selectedValues.length > maxCount && (
                     <Badge
                       className={cn(
-                        "border-foreground/1 bg-transparent text-foreground hover:bg-transparent",
+                        "border-foreground/1 text-homepagecardforeground bg-transparent hover:bg-transparent",
                         isAnimating ? "animate-bounce" : "",
                         multiSelectVariants({ variant }),
                       )}
@@ -288,7 +288,7 @@ export const MultiSelect = React.forwardRef<
               </div>
             ) : (
               <div className="mx-auto flex w-full items-center justify-between">
-                <span className="md:text-md mx-2 text-base text-card-foreground">
+                <span className="md:text-md text-homepagecardforeground mx-2 text-base">
                   {placeholder}
                 </span>
                 <ChevronDown className="mx-2 h-4 cursor-pointer text-muted-foreground" />
@@ -297,14 +297,15 @@ export const MultiSelect = React.forwardRef<
           </Button>
         </PopoverTrigger>
         <PopoverContent
-          className="w-auto p-0"
+          className="w-auto border-none p-0"
           align="start"
           onEscapeKeyDown={() => setIsPopoverOpen(false)}
         >
-          <Command>
+          <Command className="bg-homepagebackground border-none text-white">
             <CommandInput
               placeholder="Search..."
               onKeyDown={handleInputKeyDown}
+              className="text-white placeholder:text-white"
             />
             <CommandList>
               <CommandEmpty>No results found.</CommandEmpty>
@@ -312,7 +313,7 @@ export const MultiSelect = React.forwardRef<
                 <CommandItem
                   key="all"
                   onSelect={toggleAll}
-                  className="cursor-pointer"
+                  className="cursor-pointer text-white data-[selected=true]:bg-transparent data-[selected=true]:text-periwinkle"
                 >
                   <div
                     className={cn(
@@ -332,7 +333,7 @@ export const MultiSelect = React.forwardRef<
                     <CommandItem
                       key={option.value}
                       onSelect={() => toggleOption(option.value)}
-                      className="cursor-pointer"
+                      className="cursor-pointer text-white data-[selected=true]:bg-transparent data-[selected=true]:text-periwinkle"
                     >
                       <div
                         className={cn(
@@ -347,7 +348,7 @@ export const MultiSelect = React.forwardRef<
                       {option.icon && (
                         <SimpleIcon
                           path={option.icon}
-                          color={option?.iconColor}
+                          color="#ffffff"
                           imageUrl={option?.imageUrl}
                           className="mr-2 h-4 w-4"
                         />
