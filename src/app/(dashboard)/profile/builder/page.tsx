@@ -4,6 +4,9 @@
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export default function CreateProfile() {
   const { data: session, status } = useSession();
@@ -12,9 +15,8 @@ export default function CreateProfile() {
   useEffect(() => {
     if (status === "loading") return;
 
-    // Redirect if the profile is already complete
     if (session?.user.isProfileComplete) {
-      router.push("/dashboard");
+      router.push("/profile");
     }
   }, [session, status, router]);
 
@@ -23,26 +25,21 @@ export default function CreateProfile() {
   }
 
   return (
-    <div className="container mx-auto mt-10">
-      <h1 className="text-2xl font-bold">Create Your Profile</h1>
-      <form>
-        {/* Profile creation form fields */}
-        <div className="mt-4">
-          <label htmlFor="displayName">Display Name</label>
-          <input
+    <div className="mx-auto max-w-2xl">
+      <h1 className="mb-6 text-2xl font-bold">Create Your Online CV</h1>
+      <form className="space-y-4">
+        <div className="space-y-2">
+          <Label htmlFor="displayName">Name</Label>
+          <Input
             id="displayName"
             type="text"
             placeholder="Enter your display name"
-            className="w-full rounded border p-2"
           />
         </div>
 
-        <button
-          type="submit"
-          className="mt-4 rounded bg-blue-500 p-2 text-white"
-        >
+        <Button type="submit" className="w-full">
           Save Profile
-        </button>
+        </Button>
       </form>
     </div>
   );

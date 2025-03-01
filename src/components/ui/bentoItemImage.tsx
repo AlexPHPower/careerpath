@@ -14,7 +14,7 @@ function BentoItemImage({
   description: string;
 }) {
   return (
-    <Card className="overflow-hidden rounded-lg border-none bg-background text-card-foreground shadow-md transition-shadow duration-300 hover:shadow-lg">
+    <Card className="bg-homepagebackground text-homepagecardforeground overflow-hidden rounded-lg border-none shadow-md transition-shadow duration-300 hover:shadow-lg">
       <div className="relative h-80 w-full">
         <Image
           src={imageSrc ?? "/placeholder.svg"}
@@ -28,7 +28,7 @@ function BentoItemImage({
         <CardHeader className="px-0 pt-0 text-xl font-semibold">
           {title}
         </CardHeader>
-        <CardDescription className="text-muted-foreground">
+        <CardDescription className="text-homepagecardforeground">
           {description}
         </CardDescription>
       </div>

@@ -1,61 +1,87 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer base {
   :root {
-    /* New palette mapping:
-       A = yinmn-blue:   hsl(208, 53%, 32%)
-       B = dun:          hsl(43, 37%, 77%)
-       C = dark-purple:  hsl(290, 89%, 7%)
-       D = powder-blue:  hsl(217, 60%, 80%)
-       E = periwinkle:   hsl(258, 100%, 92%)
-    */
-
-    /* Overall backgrounds & text */
-    --background: 208, 53%, 31%;        /* A */
-    --foreground: 217, 60%, 80%;       /* B */
-
-    --periwinkle: 258, 100%, 92%;        /* E */
-    --periwinkle-dark: 258, 100%, 70%;
-
-    /* Section backgrounds */
-    --lightsection: 217, 60%, 80%;        /* D */
-
-    /* Cards & popovers */
-    --card: 290, 89%, 7%;               /* C */
-    --card-foreground: 43, 100%, 88%;      /* B */
-
-    /* For simplicity I’ve set popovers equal to cards here */
-    --popover: 290, 89%, 7%;            /* C */
-    --popover-foreground: 43, 100%, 88%;   /* B */
-
-    /* Interactive element colours
-       (Feel free to reassign these if you’d like a different “accent” emphasis.) */
-    --primary: 208, 53%, 32%;            /* A */
-    --primary-foreground: 0, 0%, 100%;     /* White */
-
-    --secondary: 290, 89%, 7%;           /* C */
-    --secondary-foreground: 0, 0%, 100%;   /* White */
-
-    --accent: 217, 60%, 80%;             /* D */
-    --accent-foreground: 208, 53%, 32%;    /* A (for contrast on D) */
-
-    --destructive: 290, 89%, 7%;         /* C */
-    --destructive-foreground: 0, 0%, 100%; /* White */
-
-    /* Neutrals & Rings */
-    --border: 290, 89%, 7%;              /* C */
-    --input: 290, 89%, 7%;               /* C */
-    --ring: 217, 60%, 80%;               /* D */
-
-    /* Chart colours – one per palette colour */
-    --chart-1: 208, 53%, 32%;            /* A */
-    --chart-2: 43, 37%, 77%;             /* B */
-    --chart-3: 290, 89%, 7%;             /* C */
-    --chart-4: 217, 60%, 80%;            /* D */
-    --chart-5: 258, 100%, 92%;           /* E */
-
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 346.8 77.2% 49.8%;
     --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    --homepage-gradient-1: 208, 53%, 31%;
+    --homepage-gradient-2: 290, 89%, 7%;
+
+    --homepage-primary: 208, 53%, 32%;
+    --homepage-primary-foreground: 0, 0%, 100%;
+
+    --homepage-card-foreground: 43, 100%, 88%;
+    --homepage-card: 290, 89%, 7%;
+
+    --homepage-background: 208, 53%, 31%;
+    --homepage-foreground: 217, 60%, 80%;
+
+    --homepage-periwinkle: 258, 100%, 92%;
+    --homepage-periwinkle-dark: 258, 100%, 70%;
+
+    --homepage-lightsection: 217, 60%, 80%;
+
+    --homepage-secondary: 290, 89%, 7%;
+    --homepage-secondary-foreground: 0, 0%, 100%;
+
+    --homepage-accent: 217, 60%, 80%;
+    --homepage-accent-foreground: 208, 53%, 32%;
+
+    --homepage-destructive: 290, 89%, 7%;
+    --homepage-destructive-foreground: 0, 0%, 100%;
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 346.8 77.2% 49.8%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 346.8 77.2% 49.8%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
@@ -65,6 +91,10 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  .force-transparent {
+    @apply bg-transparent;
   }
 }
 

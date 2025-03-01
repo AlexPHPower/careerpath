@@ -54,7 +54,7 @@ const JobTitleInput: React.FC<JobTitleInputProps> = ({
 
   return (
     <Input
-      className="md:text-md h-10 w-full border-card-foreground font-medium focus-visible:ring-card-foreground"
+      className="md:text-md border-homepagecardforeground placeholder:text-homepagecardforeground focus-visible:ring-none h-10 w-full font-medium"
       name={name}
       type="text"
       placeholder={placeholder}
